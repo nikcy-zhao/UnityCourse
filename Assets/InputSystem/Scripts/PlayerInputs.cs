@@ -100,6 +100,15 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Point"",
+                    ""type"": ""Button"",
+                    ""id"": ""9976c84b-4bc9-4b01-afdd-82d438499e2d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -157,6 +166,28 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""29c55b96-7d86-4427-b254-918790b8ce6a"",
+                    ""path"": ""<Joystick>/stick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Touch"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2580713a-e23e-401b-a9ea-c98c50dd38eb"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Touch"",
+                    ""action"": ""Point"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -275,6 +306,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
+        m_Player_Point = m_Player.FindAction("Point", throwIfNotFound: true);
         // Mouse
         m_Mouse = asset.FindActionMap("Mouse", throwIfNotFound: true);
         m_Mouse_Click = m_Mouse.FindAction("Click", throwIfNotFound: true);
@@ -361,6 +393,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_Move;
+    private readonly InputAction m_Player_Point;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -376,6 +409,10 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/Move".
         /// </summary>
         public InputAction @Move => m_Wrapper.m_Player_Move;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Point".
+        /// </summary>
+        public InputAction @Point => m_Wrapper.m_Player_Point;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -405,6 +442,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
+            @Point.started += instance.OnPoint;
+            @Point.performed += instance.OnPoint;
+            @Point.canceled += instance.OnPoint;
         }
 
         /// <summary>
@@ -419,6 +459,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
+            @Point.started -= instance.OnPoint;
+            @Point.performed -= instance.OnPoint;
+            @Point.canceled -= instance.OnPoint;
         }
 
         /// <summary>
@@ -638,6 +681,13 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMove(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Point" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPoint(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Mouse" which allows adding and removing callbacks.
