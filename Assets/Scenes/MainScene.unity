@@ -136,7 +136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &90843514
 RectTransform:
   m_ObjectHideFlags: 0
@@ -694,7 +694,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &590069169
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1447,7 +1447,7 @@ Light:
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.8639432
+  m_Intensity: 0.9819945
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1509,7 +1509,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1232494785}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5410462, y: 0, z: 0, w: 0.84099287}
+  m_LocalRotation: {x: 0.68682766, y: 0, z: 0, w: 0.7268204}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1568,7 +1568,7 @@ Light:
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.040817037
+  m_Intensity: 0.005401647
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1630,7 +1630,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1298969914}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.8409929, y: 0, z: 0, w: -0.5410461}
+  m_LocalRotation: {x: 0.72682035, y: 0, z: 0, w: -0.68682766}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2680,7 +2680,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 13.605679
+      scalar: 1.800549
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -7297,7 +7297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8344ede2532344658affb947fd8e57c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeOfDay: 10.367318
+  timeOfDay: 11.783935
   timeSpeed: 1
   dawnColor: {r: 1, g: 0.5, b: 0.3, a: 1}
   dayColor: {r: 0.5, g: 0.7, b: 1, a: 1}
